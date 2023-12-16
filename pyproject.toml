@@ -7,6 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "3.11.*"
+httpx = "^0.25.2"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -14,9 +15,18 @@ ipykernel = "^6.27.1"
 ruff = "^0.1.8"
 pytest = "^7.4.3"
 pre-commit = "^3.6.0"
+pytest-asyncio = "^0.23.2"
+pytest-httpx = "^0.27.0"
+taskipy = "^1.12.2"
 
 [tool.ruff]
 line-length=78
+
+[tool.taskipy.tasks]
+lint = "ruff check --force-exclude"
+format = "ruff format --force-exclude"
+pre_test = "task lint"
+test = "pytest -s -x -vv"
 
 [tool.ruff.lint.pydocstyle]
 convention="numpy"
