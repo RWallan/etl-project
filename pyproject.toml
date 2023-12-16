@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "etl"
+version = "0.1.0"
+description = ""
+authors = ["RWallan <3am.richardwallan@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11.*"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.27.1"
+ruff = "^0.1.8"
+pytest = "^7.4.3"
+
+[tool.ruff]
+line-length=78
+
+[tool.ruff.lint.pydocstyle]
+convention="numpy"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
